@@ -6,7 +6,7 @@ from random import sample
 
 def num_list(count):
     if count < 0:
-        return "Error"
+        return print("Ошибка! Повторите запрос!")
     list1 = sample(range(1, 10), count)
     print('Список элементов:', list1)
     list2 = list()
@@ -16,23 +16,3 @@ def num_list(count):
     print('Произведение пар чисел:', list2)
 
 num_list(int(input('Укажите количество элементов в списке: ')))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
