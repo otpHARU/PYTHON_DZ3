@@ -4,15 +4,28 @@
 
 from random import sample
 
-def num_list(count):
-    if count < 0:
-        return print("Ошибка! Повторите запрос!")
-    list1 = sample(range(1, 10), count)
-    print('Список элементов:', list1)
-    list2 = list()
-    for i in range(count // 2):
-        gen = list1[i] * list1[(i + 1) * -1]
-        list2.append(gen)
-    print('Произведение пар чисел:', list2)
+def list_int(count):
+    if count <= 0:
+        return 'Ошибка!'
+    list2 = sample(range(1, count * 3), count)
+    return list2
 
-num_list(int(input('Укажите количество элементов в списке: ')))
+def prod_num(list3):
+    gen = 0
+    length = len(list3)
+    gen_list = []
+    for i in range(length // 2):
+        gen = list3[i] * list3[length - i - 1]
+        gen_list.append(gen)
+    if length % 2:
+        gen_list.append(list3[length // 2])
+    # print('Произведение чисел:', gen_list)
+    return gen_list
+
+list1 = list_int(int(input('Укажите количество элементов в списке: ')))
+if list1 != 'Ошибка!':
+    print ('Список элементов:', list1)
+    print('Произведение пар чисел:', prod_num(list1))
+else:
+    print('Ошибка! Повторите запрос!')
+
